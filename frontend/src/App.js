@@ -127,8 +127,8 @@ function App() {
   const handleInitTransaction = async () => {
     setLoading(true);
     try {
-      await axios.get('http://localhost:5000/api/generate-token');
-      const response = await axios.post('http://localhost:5000/api/init-transaction');
+      await axios.get('https://khqr-gules.vercel.app/api/generate-token');
+      const response = await axios.post('https://khqr-gules.vercel.app/api/init-transaction');
       const { data } = response.data;
       setQrData(data.qr);
       setTxnId(data.txn_id);
@@ -147,7 +147,7 @@ function App() {
 
     setCheckingStatus(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/check-transaction', { txn_id: txnId });
+      const response = await axios.post('https://khqr-gules.vercel.app/api/check-transaction', { txn_id: txnId });
       const { data } = response.data;
       setStatus(data.txn_status);
 
