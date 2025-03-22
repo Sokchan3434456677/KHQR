@@ -1,39 +1,50 @@
 .App {
   text-align: center;
+  background: azure;
   padding: 20px;
 }
 
 button {
   margin: 10px;
-  padding: 8px 16px;
+  padding: 10px 20px;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-button:hover {
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
   background-color: #0056b3;
 }
 
-pre {
-  text-align: left;
-  background-color: #f8f9fa;
-  padding: 10px;
-  border-radius: 4px;
-  max-width: 600px;
-  margin: 10px auto;
+
+/* App.css */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  .txt-timer {
+    font-size: 0.75rem;
+  }
 }
 
-.product-section {
-  margin: 20px 0;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  display: inline-block;
-}
-
-img {
-  margin: 10px 0;
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.25rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  .txt-timer {
+    font-size: 0.625rem;
+  }
 }
